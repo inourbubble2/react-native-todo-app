@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput, StatusBar, StyleSheet, Text, View, Dimensions, Platform, ScrollView, AsyncStorage} from 'react-native';
+import {TextInput, StatusBar, StyleSheet, Text, View, Dimensions, Platform, ScrollView, AsyncStorage, Alert} from 'react-native';
 import { AppLoading } from 'expo';
 import ToDo from './ToDo';
 import uuidv1 from 'uuid/v1';
@@ -34,6 +34,7 @@ export default class App extends React.Component {
             returnKeyType={"done"}
             autoCorrect={false}
             onSubmitEditing={this._addToDo}
+            underlineColorAndroid={"transparent"}
           />
           <ScrollView contentContainerStyle={styles.toDos}>
             {Object.values(toDos).reverse().map(toDo => <ToDo key={toDo.id} {...toDo} deleteToDo={this._deleteToDo} uncompleteToDo={this._uncompleteToDo} completeToDo={this._completeToDo} updateToDo={this._updateToDo}/>)}
@@ -55,9 +56,10 @@ export default class App extends React.Component {
       console.log(toDos);
       this.setState({
         loadedToDos: true,
-        toDos: parsedToDos
+        toDos: parsedToDos || {}
       });
     } catch (err) {
+      Alert.alert(err);
       console.log(err);
     }
   };

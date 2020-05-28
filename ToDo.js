@@ -47,7 +47,7 @@ export default class ToDo extends React.Component {
                     <View style={styles.actions}>
                         <TouchableOpacity onPressOut={this._finishEditing}>
                             <View style={styles.actionContainer}>
-                                <Text style={styles.actionText}>✅</Text>
+                                <Text style={styles.actionText}>✔️</Text>
                             </View>
                         </TouchableOpacity>
                     </View>

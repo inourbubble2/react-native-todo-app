@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "again": "0.0.1",
+    "exp": "^57.2.1",
     "expo": "~37.0.3",
     "prop-types": "^15.7.2",
     "react": "~16.9.0",

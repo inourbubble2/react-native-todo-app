@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "todo",
-    "slug": "todo",
+    "name": "To Do",
+    "slug": "to-do",
     "platforms": [
       "ios",
       "android",
@@ -10,6 +10,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "entryPoint": "./App.js",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
@@ -23,6 +24,11 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "android": {
+      "package": "co.najoo.justtodo",
+      "versionCode": 2
+    },
+    "description": ""
   }
 }
